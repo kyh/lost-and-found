@@ -1,0 +1,344 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('../font/icomoon.eot');
+	src:url('../font/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('../font/icomoon.woff') format('woff'),
+		url('../font/icomoon.ttf') format('truetype'),
+		url('../font/icomoon.svg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.menuwrapper {
+	width: 100%;
+	max-width: 200px;
+	position: relative;
+}
+
+#menu{
+max-width:150px;
+}
+
+.menuwrapper:first-child {
+	margin-right: 100px;
+}
+
+.menuwrapper button {
+	background: none;
+	border: none;
+	overflow: hidden;
+	position: relative;
+	cursor: pointer;
+	outline: none;
+	font-size: 60px;
+	text-transform: uppercase;
+	line-height:0.9;
+}
+
+.menuwrapper button:hover {
+	background: none;
+}
+.menuwrapper button.active {
+	background: none;
+
+}
+.menuwrapper ul {
+	background: #ffffff;
+	border: #1C1C1C 1px;
+}
+
+.menuwrapper ul {
+	padding: 0;
+	list-style: none;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.menuwrapper li {
+	position: relative;
+}
+
+.menuwrapper li a {
+	display: block;
+	position: relative;
+	padding: 15px 20px;
+	font-size: 16px;
+	line-height: 20px;
+	font-weight: 300;
+	color: #333;
+	/* color: #BDAEC6; */
+	outline: none;
+}
+
+.no-touch .menuwrapper li a:hover {
+	background: rgba(150, 150, 150, 0.5);
+}
+
+.menuwrapper li.back > a {
+	padding-left: 30px;
+	background: #FFF;
+}
+
+.menuwrapper li.back:after,
+.menuwrapper li > a:not(:only-child):after {
+	position: absolute;
+	top: 0;
+	line-height: 50px;
+	font-family: 'icomoon';
+	speak: none;
+	-webkit-font-smoothing: antialiased;
+	content: "\e000";
+}
+
+.menuwrapper li.back:after {
+	left: 10px;
+	top: 9px;
+	color: rgba(0, 0, 0, 0.15);
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+
+.menuwrapper li > a:after {
+	right: 10px;
+	color: rgba(0,0,0,0.15);
+}
+
+.menuwrapper .menu {
+	margin: 5px 0 0 0;
+	position: absolute;
+	width: 100%;
+	opacity: 0;
+	pointer-events: none;
+	-webkit-transform: translateY(10px);
+	-moz-transform: translateY(10px);
+	transform: translateY(10px);
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.menuwrapper .menu.menu-toggle {
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+.menuwrapper .menu.menuopen {
+	opacity: 1;
+	pointer-events: auto;
+	z-index: 10;
+	-webkit-transform: translateY(0px);
+	-moz-transform: translateY(0px);
+	transform: translateY(0px);
+}
+
+/* Hide the inner submenus */
+.menuwrapper li .submenu {
+	display: none;
+}
+
+/* 
+When a submenu is openend, we will hide all li siblings.
+For that we give a class to the parent menu called "subview".
+We also hide the submenu link. 
+The opened submenu will get the class "subviewopen".
+All this is done for any sub-level being entered.
+*/
+.menu.subview li,
+.menu.subview li.subviewopen > a,
+.menu.subview li.subview > a {
+	display: none;
+}
+
+.menu.subview li.subview,
+.menu.subview li.subview .submenu,
+.menu.subview li.subviewopen,
+.menu.subview li.subviewopen > .submenu,
+.menu.subview li.subviewopen > .submenu > li {
+	display: block;
+}
+
+/* Dynamically added submenu outside of the menu context */
+.menuwrapper > .submenu {
+	position: absolute;
+	width: 100%;
+	top: 104px;
+	left: 0;
+	margin: 0;
+}
+
+/* Animation classes for moving out and in */
+
+.menu.animate-out-5 {
+	-webkit-animation: MenuAnimOut5 0.4s ease;
+	-moz-animation: MenuAnimOut5 0.4s ease;
+	animation: MenuAnimOut5 0.4s ease;
+}
+
+
+@-webkit-keyframes MenuAnimOut5 {
+	100% {
+		-webkit-transform: translateY(40%);
+		opacity: 0;
+	}
+}
+
+@-moz-keyframes MenuAnimOut5 {
+	100% {
+		-moz-transform: translateY(40%);
+		opacity: 0;
+	}
+}
+
+@keyframes MenuAnimOut5 {
+	100% {
+		transform: translateY(40%);
+		opacity: 0;
+	}
+}
+
+.menu.animate-in-5 {
+	-webkit-animation: MenuAnimIn5 0.4s ease;
+	-moz-animation: MenuAnimIn5 0.4s ease;
+	animation: MenuAnimIn5 0.4s ease;
+}
+
+@-webkit-keyframes MenuAnimIn5 {
+	0% {
+		-webkit-transform: translateY(40%);
+		opacity: 0;
+	}
+	100% {
+		-webkit-transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@-moz-keyframes MenuAnimIn5 {
+	0% {
+		-moz-transform: translateY(40%);
+		opacity: 0;
+	}
+	100% {
+		-moz-transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes MenuAnimIn5 {
+	0% {
+		transform: translateY(40%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+.menuwrapper > .submenu.animate-in-5 {
+	-webkit-animation: SubMenuAnimIn5 0.4s ease;
+	-moz-animation: SubMenuAnimIn5 0.4s ease;
+	animation: SubMenuAnimIn5 0.4s ease;
+	z-index: 10;
+}
+
+@-webkit-keyframes SubMenuAnimIn5 {
+	0% {
+		-webkit-transform: translateZ(-200px);
+		opacity: 0;
+	}
+	100% {
+		-webkit-transform: translateZ(0);
+		opacity: 1;
+	}
+}
+
+@-moz-keyframes SubMenuAnimIn5 {
+	0% {
+		-moz-transform: translateZ(-200px);
+		opacity: 0;
+	}
+	100% {
+		-moz-transform: translateZ(0);
+		opacity: 1;
+	}
+}
+
+@keyframes SubMenuAnimIn5 {
+	0% {
+		transform: translateZ(-200px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateZ(0);
+		opacity: 1;
+	}
+}
+
+.menuwrapper > .submenu.animate-out-5 {
+	-webkit-animation: SubMenuAnimOut5 0.4s ease;
+	-moz-animation: SubMenuAnimOut5 0.4s ease;
+	animation: SubMenuAnimOut5 0.4s ease;
+	z-index: 10;
+}
+
+@-webkit-keyframes SubMenuAnimOut5 {
+	0% {
+		-webkit-transform: translateZ(0);
+		opacity: 1;
+	}
+	100% {
+		-webkit-transform: translateZ(-200px);
+		opacity: 0;
+	}
+}
+
+@-moz-keyframes SubMenuAnimOut5 {
+	0% {
+		-moz-transform: translateZ(0);
+		opacity: 1;
+	}
+	100% {
+		-moz-transform: translateZ(-200px);
+		opacity: 0;
+	}
+}
+
+@keyframes SubMenuAnimOut5 {
+	0% {
+		transform: translateZ(0);
+		opacity: 1;
+	}
+	100% {
+		transform: translateZ(-200px);
+		opacity: 0;
+	}
+}
+
+/* No JS Fallback */
+.no-js .menuwrapper .menu {
+	position: relative;
+	opacity: 1;
+	-webkit-transform: none;
+	-moz-transform: none;
+	transform: none;
+}
+
+.no-js .menuwrapper li .submenu {
+	display: block;
+}
+
+.no-js .menuwrapper li.back {
+	display: none;
+}
+
+.no-js .menuwrapper li > a:not(:only-child) {
+	background: rgba(0,0,0,0.1);
+}
+
+.no-js .menuwrapper li > a:not(:only-child):after {
+	content: '';
+}

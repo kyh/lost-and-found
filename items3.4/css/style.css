@@ -1,0 +1,358 @@
+@import url('normalize.css');
+@import url(http://fonts.googleapis.com/css?family=Oswald);
+
+@font-face {
+  font-family: 'fontello';
+  src: url('../font/fontello.eot?60961806');
+  src: url('../font/fontello.eot?60961806#iefix') format('embedded-opentype'),
+       url('../font/fontello.woff?60961806') format('woff'),
+       url('../font/fontello.ttf?60961806') format('truetype'),
+       url('../font/fontello.svg?60961806#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+ 
+ [class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  margin-left: .2em;
+  font-size: 2em;
+}
+ 
+.icon-ok:before { content: '\e802'; } 
+.icon-search:before { content: '\e803'; } 
+
+/* =Basics */
+
+body {
+  line-height: 1.7;
+  /* color: #333; */
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  background:#5DC987;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+h1 {
+  line-height: 1;
+  text-align: left;
+  color: white;
+  text-indent:10px;
+}
+
+a {
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease; 
+  transition: all 0.5s ease;
+}
+
+a:hover {
+  color: white;
+}
+
+/* =Lists */
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  padding: .5em 0;
+}
+
+/* =Forms */
+
+input[type="text"] {
+  -webkit-appearance: none;
+  border: none;
+  padding: .5em;
+  width: 100%;
+}
+
+input[type="submit"],
+.button {
+  -webkit-appearance: none;
+  border: none;
+  width: 100%;
+  background: none;
+  margin-top: .5em;
+  text-decoration: none;
+  color: #350435;
+  display: block;
+  text-align: center;
+  height: 2.5em;
+  line-height: 2.5em;
+}
+
+ 
+input[type="submit"]:hover,
+.button:hover {
+  text-decoration: underline;
+}
+
+
+label {
+  display: block;
+  margin-bottom: .1em;
+  text-align:left;
+  padding-left:10px;
+  margin-top:5px;
+  color:white;
+  font-size:2em;
+
+}
+
+/* =Tables */
+
+table {
+  width: 100%;
+  margin-top: 1em;
+  font-size: .875em;
+}
+th {
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+td {
+  padding: .5em 0;
+  line-height: 1;
+}
+
+.submitButton {
+  background: none;
+  border: none;
+  margin-left: 50px;
+  margin-top:30px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease; 
+  transition: all 0.5s ease;
+}
+
+.icon-search, .icon-ok {
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease; 
+  transition: all 0.5s ease;
+}
+
+.submitButton:hover .icon-search, .submitButton:hover .icon-ok {
+  color: #FFF;
+  font-size: 2em;
+}
+.submitButton:hover {
+  margin-left: 25px;
+  margin-top: 20px;
+}
+/* =Layout */
+
+.wrap {
+  width: 100%;
+  max-width: 40em;
+  margin: 5em auto 1em;
+  padding-left:30px;
+}
+
+#searchWrap {
+  max-width: 45em;
+}
+
+.addItem {
+  position: absolute;
+  top: 0px;
+  right: 1%;
+}
+
+#typeMenu{
+  font-size:70px;
+  text-align: left;
+  line-height: 1.1em;
+  margin-left: -.9em;
+}
+
+#buildingMenu{
+  font-size:70px;
+  margin-left: -.9em;
+}
+
+#found{
+background-color:#F0BB35;
+}
+
+#thankyou{
+  background-color: #F35252;
+}
+
+#colorMenu{
+  padding-bottom:25px;
+  margin-left: -.9em;
+}
+
+#colorMenu, #type, #building{
+  font-size:75px;
+}
+
+.pics {
+  display: none;
+}
+
+#detective {
+  margin-right: 7em;
+}
+
+#boxPic {
+  margin: 6.5em 0 0 0;
+}
+
+#boxPic2 {
+  margin: 4em 0 0 0;
+}
+
+/* Search page */
+.reveal-trigger {
+  padding: 5px 15px 5px 65px;
+  background: rgba(53, 53, 53, 0.41);
+}
+
+#show {
+  padding: 0 3em;
+  text-transform: none;
+}
+
+#show p{
+  line-height: 2em;
+}
+
+#grid{
+width:200px;
+float:left;
+margin:10px; 10px 10px 0px;
+padding:10px;
+}
+
+.list{
+max-width:800px;
+}
+
+p {
+line-height:20px;
+}
+
+.lostit{
+color:white;
+}
+
+.otherinfo{
+margin:0;
+}
+
+#border{
+border:2px solid rgb(57, 125, 197);}
+
+#delete{
+display:none;
+}
+
+#search{
+background-color:rgb(119, 179, 226);
+}
+
+.claimed{
+background-color:rgb(57, 125, 197);
+padding:5px;
+display:block;
+text-align:center;
+}
+
+#claimit{
+
+}
+
+.block{
+padding-right:8px;
+padding-left:8px;
+}
+
+.claimbutton{
+background-color:rgb(57, 125, 197);
+width: 180px;
+height: 30px;
+border: none;
+display:block;
+-webkit-transition: all 0.5s ease;
+-moz-transition: all 0.5s ease; 
+transition: all 0.5s ease;
+}
+
+.claimbutton:hover{
+background-color:rgba(57, 125, 197, 0.4);
+}
+
+.claimingit{
+  color: black;
+}
+
+.claimingit:hover{
+color:rgba(0,0,0,0.7);
+}
+
+#losth1{
+  line-height: 1;
+  color: white;
+  text-indent:0px;
+  text-align:left;
+  letter-spacing: -0.1em;
+}
+
+/* Thanks page */
+.thanks {
+  font-size: 4em;
+  text-align: center;
+}
+
+#thanks {
+  text-align: center;
+  line-height: 20px;
+}
+
+@media screen and (min-width: 800px) {
+
+#typeMenu{
+margin-left: auto;
+}
+
+#buildingMenu{
+margin-left: auto;
+}
+
+#colorMenu{
+margin-left: auto;
+}
+
+#losth1{
+  text-align: center;
+  letter-spacing: 0;
+}
+
+.pics{
+  display: block;
+  float: right;
+  margin: 3em;
+}
